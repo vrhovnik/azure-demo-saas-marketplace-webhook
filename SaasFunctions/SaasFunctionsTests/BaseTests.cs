@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using SaasFunctions;
+using SaasFunctions.Models;
 
 namespace SaasFunctionsTests;
 
+[TestFixture]
 public class Tests
 {
     private string BaseUrl = "";

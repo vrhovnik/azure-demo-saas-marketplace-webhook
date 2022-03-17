@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.OData.Edm;
 using Newtonsoft.Json;
+using SaasFunctions.Models;
 using SendGrid.Helpers.Mail;
 
 namespace SaasFunctions
