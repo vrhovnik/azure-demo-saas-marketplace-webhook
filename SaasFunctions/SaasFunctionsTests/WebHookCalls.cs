@@ -15,7 +15,7 @@ public class WebHookCalls
     public void Init()
     {
         BaseUrl = Environment.GetEnvironmentVariable("SaaSUrl") ??
-                  "https://saas-hack-functions.azurewebsites.net/";
+                  "https://saas-hackathon.azurewebsites.net/";
     }
 
     [Test(Description = "Checks if Webhooks handle empty body")]

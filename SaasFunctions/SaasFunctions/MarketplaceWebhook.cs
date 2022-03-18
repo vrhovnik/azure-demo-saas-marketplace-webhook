@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using SaasFunctions.Models;
 
 namespace SaasFunctions;
@@ -36,11 +37,18 @@ public static class MarketplaceWebhook
                 log.LogError("Request body is empty, check values.");
                 return new BadRequestResult();
             }
-            
-            //TODO: transform body to appropriate message and react based on that
-            
-            log.LogInformation("Addding data to Azure Tables for log purposes");
-            var currentMessage = $"Webhook was called at {DateTime.Now}";
+
+            var payload = JsonConvert.DeserializeObject<WebhookPayload>(requestBody);
+
+            log.LogInformation("Addding data to Azure Tables and console output");
+
+            var currentMessage =
+                $"Webhook was called at {DateTime.Now} with following details:{Environment.NewLine}" +
+                $"action {payload.Action}, status {payload.Status}, on offer {payload.OfferId} on plan {payload.PlanId}";
+
+            log.LogInformation("Action {0}, status {1}, offer id {2}, plan {3}",
+                payload.Action, payload.Status, payload.OfferId, payload.PlanId);
+
             var logItem = new LogTableModel
             {
                 PartitionKey = "webhooklogs",

@@ -15,11 +15,9 @@ public class Tests
     private string BaseUrl = "";
 
     [SetUp]
-    public void Init()
-    {
+    public void Init() =>
         BaseUrl = Environment.GetEnvironmentVariable("SaaSUrl") ?? 
-                  "https://saas-hack-functions.azurewebsites.net/";
-    }
+                  "https://saas-hackathon.azurewebsites.net/";
 
     [Test(Description = "Checks if Azure Functions runs at that URL")]
     public async Task Check_If_Azure_FunctionsRuns()
@@ -33,9 +31,10 @@ public class Tests
     public async Task Check_If_Azure_Functions_Sends_Email()
     {
         var httpClient = new HttpClient { BaseAddress = new Uri(BaseUrl, UriKind.Absolute) };
+        var email = Environment.GetEnvironmentVariable("DefaultEmail");
         var emailObject = JsonConvert.SerializeObject(new EmailModel
         {
-            Email = Environment.GetEnvironmentVariable("DefaultEmail"),
+            Email = email,
             Message = "Testing from local unit tests",
             Subject = "Sending email to receiver"
         });

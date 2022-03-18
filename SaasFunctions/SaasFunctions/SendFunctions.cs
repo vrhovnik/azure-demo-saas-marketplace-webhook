@@ -54,7 +54,7 @@ namespace SaasFunctions
                 var message = new SendGridMessage();
                 message.AddTo(emailModel.Email);
                 message.AddContent("text/html", emailModel.Message);
-                message.SetFrom(new EmailAddress("info@saashackathon.net"));
+                message.SetFrom(new EmailAddress(Environment.GetEnvironmentVariable("FromEmail")));
                 message.SetSubject(emailModel.Subject);
             
                 log.LogInformation("Sending email to client via SendGrid...");
