@@ -2,6 +2,10 @@
 
 namespace SaasFunctions.Models;
 
+/// <summary>
+/// OperationStatusEnum is taken from SaaS accelerator
+/// here https://github.com/Azure/Commercial-Marketplace-SaaS-Accelerator
+/// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum OperationStatusEnum
 {

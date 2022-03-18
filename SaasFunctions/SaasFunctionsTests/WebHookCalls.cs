@@ -52,6 +52,6 @@ public class WebHookCalls
         var body = new StringContent(bodyObject, Encoding.UTF8, "application/json");
         var responseMessage = await httpClient.PostAsync("webhook", body);
 
-        Assert.AreEqual(responseMessage.IsSuccessStatusCode, false, "Webhook form was submitted successfully");
+        Assert.AreEqual(responseMessage.IsSuccessStatusCode, true, "Webhook form was submitted successfully");
     }
 }

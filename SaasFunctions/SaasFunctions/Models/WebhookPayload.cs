@@ -2,7 +2,10 @@
 using System.Text.Json.Serialization;
 
 namespace SaasFunctions.Models;
-
+/// <summary>
+/// webhook payload is taken from SaaS Accelerator
+/// located here: https://github.com/Azure/Commercial-Marketplace-SaaS-Accelerator
+/// </summary>
 public class WebhookPayload
 {
     /// <summary>

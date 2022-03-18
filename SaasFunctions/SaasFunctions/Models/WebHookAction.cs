@@ -3,6 +3,10 @@ using System.Text.Json.Serialization;
 
 namespace SaasFunctions.Models;
 
+/// <summary>
+/// WebhookAction is taken from SaaS Accelerator
+/// here https://github.com/Azure/Commercial-Marketplace-SaaS-Accelerator
+/// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum WebhookAction
 {
