@@ -10,40 +10,34 @@ public enum WebhookAction
     /// <summary>
     /// The unsubscribe
     /// </summary>
-    [EnumMember(Value = "Unsubscribe")]
-    Unsubscribe,
+    [EnumMember(Value = "Unsubscribe")] Unsubscribe,
 
     /// (When the change plan operation has completed)
     /// <summary>
     /// The change plan
     /// </summary>
-    [EnumMember(Value = "ChangePlan")]
-    ChangePlan,
+    [EnumMember(Value = "ChangePlan")] ChangePlan,
 
     /// (When the change quantity operation has completed),
     /// <summary>
     /// The change quantity
     /// </summary>
-    [EnumMember(Value = "ChangeQuantity")]
-    ChangeQuantity,
+    [EnumMember(Value = "ChangeQuantity")] ChangeQuantity,
 
     /// (When resource has been suspended)
     /// <summary>
     /// The suspend
     /// </summary>
-    [EnumMember(Value = "Suspend")]
-    Suspend,
+    [EnumMember(Value = "Suspend")] Suspend,
 
     /// (When resource has been reinstated after suspension)
     /// <summary>
     /// The reinstate
     /// </summary>
-    [EnumMember(Value = "Reinstate")]
-    Reinstate,
+    [EnumMember(Value = "Reinstate")] Reinstate,
 
     /// <summary>
     /// The transfer
     /// </summary>
-    [EnumMember(Value = "Transfer")]
-    Transfer
+    [EnumMember(Value = "Transfer")] Transfer
 }

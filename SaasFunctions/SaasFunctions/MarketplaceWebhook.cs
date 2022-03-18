@@ -61,13 +61,13 @@ public static class MarketplaceWebhook
 
             stopwatch.Stop();
 
-            log.LogInformation("Webhook execution took {0}", stopwatch.ElapsedMilliseconds);
+            log.LogInformation("Azure Function Webhook execution took {0}", stopwatch.ElapsedMilliseconds);
 
-            return new OkObjectResult("Message was saved and ");
+            return new OkObjectResult("Message was saved - acknowledged receive");
         }
         catch (Exception e)
         {
-            log.LogError("Webhook has failed, check error: {0}", e.Message);
+            log.LogError("Webhook call has failed, check error: {0}", e.Message);
             return new BadRequestResult();
         }
     }
